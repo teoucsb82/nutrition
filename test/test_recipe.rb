@@ -4,6 +4,8 @@ require 'nutrition'
 class RecipeTest < Minitest::Test
   describe 'recipes' do
     it 'has the following recipes' do
+      assert_instance_of Recipe::BreakfastMuffinCupsToGo, Recipe::BreakfastMuffinCupsToGo.new
+      assert_instance_of Recipe::PeachesNCreamParfait, Recipe::PeachesNCreamParfait.new
       assert_instance_of Recipe::TomatoPestoEggWhiteOmelet, Recipe::TomatoPestoEggWhiteOmelet.new
       assert_instance_of Recipe::WholeWheatCrepesFlorentine, Recipe::WholeWheatCrepesFlorentine.new
     end
@@ -16,6 +18,10 @@ class RecipeTest < Minitest::Test
 
     describe '#to_s' do
       it { assert_equal @recipe.to_s, 'Tomato Pesto Egg-White Omelet' }
+    end
+
+    describe '#meal_type' do
+      it { refute_nil @recipe.meal_type }
     end
 
     describe '#plans' do

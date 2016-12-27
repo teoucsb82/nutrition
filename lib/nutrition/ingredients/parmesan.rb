@@ -1,6 +1,6 @@
 class Ingredient
   class Parmesan < Ingredient
-    def to_s
+    def name
       'Parmesan Cheese'
     end
   end

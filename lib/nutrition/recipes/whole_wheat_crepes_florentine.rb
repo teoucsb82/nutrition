@@ -1,9 +1,5 @@
 class Recipe
-  class WholeWheatCrepesFlorentine
-    def to_s
-      'Whole Wheat Crepes Florentine'
-    end
-
+  class WholeWheatCrepesFlorentine < Recipe
     def initialize
       @ingredients = [
         Ingredient::Water.new(portion: "3/4", measurement: "cup"),
@@ -19,6 +15,10 @@ class Recipe
         Ingredient::OliveOil.new(portion: "1", measurement: "tsp"),
         Ingredient::CheeseMozzarella.new(portion: "1", measurement: "tbsp", description: "shredded")
       ]
+    end
+
+    def meal_type
+      [ Recipe::BREAKFAST ]
     end
 
     def plans

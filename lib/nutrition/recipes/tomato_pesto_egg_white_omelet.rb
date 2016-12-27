@@ -1,5 +1,6 @@
 class Recipe
-  class TomatoPestoEggWhiteOmelet
+  class TomatoPestoEggWhiteOmelet < Recipe
+
     def to_s
       'Tomato Pesto Egg-White Omelet'
     end
@@ -13,6 +14,10 @@ class Recipe
         Ingredient::EggWhite.new(portion: "3"),
         Ingredient::Parmesan.new(portion: "1", measurement: "tbsp", description: "shredded")
       ]
+    end
+
+    def meal_type
+      [ Recipe::BREAKFAST ]
     end
 
     def plans

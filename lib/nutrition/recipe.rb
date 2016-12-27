@@ -1,12 +1,23 @@
 class Recipe
+  attr_reader :ingredients
+
   VEGAN = 'Vegan'
   VEGETARIAN = 'Vegetarian'
   GRAINFREE = 'Grain-Free'
 
+  BREAKFAST = 'Breakfast'
+  LUNCH = 'Lunch'
+  DINNER = 'Dinner' 
+  SALAD = 'Salad'
+  SOUP = 'Soup'
+  
   def tags
     []
   end
+
+  def to_s
+    self.class.to_s.split("::").last.gsub(/([^\^])([A-Z])/,'\1 \2')
+  end
 end
 
-require_relative 'recipes/tomato_pesto_egg_white_omelet'
-require_relative 'recipes/whole_wheat_crepes_florentine'
+Dir["./lib/nutrition/recipes/*.rb"].each {|file| require file }

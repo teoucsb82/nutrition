@@ -1,6 +1,6 @@
 class Ingredient
   class MilkLowFat < Ingredient
-    def to_s
+    def name
       'Low-Fat (1%) Milk'
     end
   end

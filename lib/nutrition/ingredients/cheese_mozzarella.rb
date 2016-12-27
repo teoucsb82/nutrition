@@ -1,6 +1,6 @@
 class Ingredient
   class CheeseMozzarella < Ingredient
-    def to_s
+    def name
       'Low-Fat Mozzarella Cheese'
     end
   end

@@ -1,6 +1,6 @@
 class Ingredient
   class FlourWholeWheatPastry < Ingredient
-    def to_s
+    def name
       'Whole Wheat Pastry Flour'
     end
   end

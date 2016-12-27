@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "TBD"
   s.authors     = ["Teo Dell'Amico"]
   s.email       = 'teo@dellamico.com'
-  s.files       = ["lib/nutrition.rb"]
+  s.files       = Dir.glob("{lib}/**/*")
   s.homepage    =
     'http://rubygems.org/gems/nutrition'
   s.license       = 'MIT'

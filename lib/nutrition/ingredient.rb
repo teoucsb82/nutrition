@@ -10,21 +10,14 @@ class Ingredient
   end
 
   def to_s
-    'Teo'
+    s = [portion, measurement, name].compact.join(' ')
+    s += " (#{description})" if description
+    s
+  end
+
+  def name
+    self.class.to_s.split("::").last.gsub(/([^\^])([A-Z])/,'\1 \2')
   end
 end
 
-require_relative 'ingredients/basil_leaf'
-require_relative 'ingredients/cheese_mozzarella'
-require_relative 'ingredients/chicken_breast'
-require_relative 'ingredients/egg_white'
-require_relative 'ingredients/flour_whole_wheat_pastry'
-require_relative 'ingredients/garlic'
-require_relative 'ingredients/milk_low_fat'
-require_relative 'ingredients/nonstick_cooking_spray'
-require_relative 'ingredients/olive_oil'
-require_relative 'ingredients/onion'
-require_relative 'ingredients/parmesan'
-require_relative 'ingredients/spinach'
-require_relative 'ingredients/tomato_roma'
-require_relative 'ingredients/water'
+Dir["./lib/nutrition/ingredients/*.rb"].each {|file| require file }

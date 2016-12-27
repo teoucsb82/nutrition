@@ -1,6 +1,6 @@
 class Ingredient
   class TomatoRoma < Ingredient
-    def to_s
+    def name
       'Roma Tomato'
     end
   end
