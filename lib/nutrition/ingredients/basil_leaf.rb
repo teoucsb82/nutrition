@@ -1,4 +1,6 @@
-class Ingredient
-  class BasilLeaf < Ingredient
+class Nutrition
+  class Ingredient
+    class BasilLeaf < Ingredient
+    end
   end
 end

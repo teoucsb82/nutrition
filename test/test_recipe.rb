@@ -4,16 +4,16 @@ require 'nutrition'
 class RecipeTest < Minitest::Test
   describe 'recipes' do
     it 'has the following recipes' do
-      assert_instance_of Recipe::BreakfastMuffinCupsToGo, Recipe::BreakfastMuffinCupsToGo.new
-      assert_instance_of Recipe::PeachesNCreamParfait, Recipe::PeachesNCreamParfait.new
-      assert_instance_of Recipe::TomatoPestoEggWhiteOmelet, Recipe::TomatoPestoEggWhiteOmelet.new
-      assert_instance_of Recipe::WholeWheatCrepesFlorentine, Recipe::WholeWheatCrepesFlorentine.new
+      assert_instance_of Nutrition::Recipe::BreakfastMuffinCupsToGo, Nutrition::Recipe::BreakfastMuffinCupsToGo.new
+      assert_instance_of Nutrition::Recipe::PeachesNCreamParfait, Nutrition::Recipe::PeachesNCreamParfait.new
+      assert_instance_of Nutrition::Recipe::TomatoPestoEggWhiteOmelet, Nutrition::Recipe::TomatoPestoEggWhiteOmelet.new
+      assert_instance_of Nutrition::Recipe::WholeWheatCrepesFlorentine, Nutrition::Recipe::WholeWheatCrepesFlorentine.new
     end
   end
 
   describe 'instance methods' do    
     before do
-      @recipe = Recipe::TomatoPestoEggWhiteOmelet.new
+      @recipe = Nutrition::Recipe::TomatoPestoEggWhiteOmelet.new
     end
 
     describe '#to_s' do

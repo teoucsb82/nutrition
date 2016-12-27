@@ -1,7 +1,9 @@
-class Ingredient
-  class Parmesan < Ingredient
-    def name
-      'Parmesan Cheese'
+class Nutrition
+  class Ingredient
+    class Parmesan < Ingredient
+      def name
+        'Parmesan Cheese'
+      end
     end
   end
 end
