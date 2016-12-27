@@ -4,15 +4,18 @@ require 'nutrition'
 class RecipeTest < Minitest::Test
   describe '.find' do
     it 'returns a fresh instance of the parameterized search results' do
-      slug = BreakfastMuffinCupsToGo.slug
-      assert_instance_of BreakfastMuffinCupsToGo, Nutrition::Recipe.find(slug)
+      recipe = PeachesNCreamParfait.new
+      assert_instance_of PeachesNCreamParfait, Nutrition::Recipe.find(recipe.slug)
     end
   end
 
   describe 'recipes' do
     it 'has the following recipes' do
       assert_instance_of BreakfastMuffinCupsToGo, BreakfastMuffinCupsToGo.new
+      assert_instance_of BreakfastQuinoa, BreakfastQuinoa.new
+      assert_instance_of HomemadeMuesli, HomemadeMuesli.new
       assert_instance_of PeachesNCreamParfait, PeachesNCreamParfait.new
+      assert_instance_of PowerCornPancakesWithBlueberries, PowerCornPancakesWithBlueberries.new
       assert_instance_of TomatoPestoEggWhiteOmelet, TomatoPestoEggWhiteOmelet.new
       assert_instance_of WholeWheatCrepesFlorentine, WholeWheatCrepesFlorentine.new
     end
@@ -27,8 +30,12 @@ class RecipeTest < Minitest::Test
       it { assert_equal @recipe.to_s, 'Tomato Pesto Egg-White Omelet' }
     end
 
-    describe '#meal_type' do
-      it { refute_nil @recipe.meal_type }
+    describe '#meal_types' do
+      it { refute_nil @recipe.meal_types }
+    end
+
+    describe '#serving_size' do
+      it { refute_nil @recipe.serving_size }
     end
 
     describe '#plans' do

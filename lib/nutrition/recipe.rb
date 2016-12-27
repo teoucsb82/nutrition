@@ -13,10 +13,15 @@ class Nutrition
     SOUP = 'Soup'
 
     def self.all
-      Dir["./lib/nutrition/recipe/*.rb"].map { |f| f.split("/")
-                                                    .last
-                                                    .gsub(".rb", "")
-                                                    .gsub("_", "-") }
+      [
+        BreakfastMuffinCupsToGo.new,
+        BreakfastQuinoa.new,
+        HomemadeMuesli.new,
+        PeachesNCreamParfait.new,
+        PowerCornPancakesWithBlueberries.new,
+        TomatoPestoEggWhiteOmelet.new,
+        WholeWheatCrepesFlorentine.new
+      ]
     end
 
     ##
@@ -28,12 +33,12 @@ class Nutrition
     end
     
     ##
-    # Nutrition::Recipe.BreakfastMuffinCupsToGo.slug
+    # Nutrition::Recipe.BreakfastMuffinCupsToGo.new.slug
     # => "breakfast-muffin-cups-to-go"
-    def self.slug
-      self.to_s.split("::").last.gsub(/([^\^])([A-Z])/,'\1-\2').split("-").map(&:downcase).join("-")
+    def slug
+      self.class.to_s.split("::").last.gsub(/([^\^])([A-Z])/,'\1-\2').split("-").map(&:downcase).join("-")
     end
-
+    
     def tags
       []
     end
@@ -41,8 +46,24 @@ class Nutrition
     def to_s
       self.class.to_s.split("::").last.gsub(/([^\^])([A-Z])/,'\1 \2')
     end
-
+    
+    private
+    ##
+    # Nutrition::Recipe.slugs
+    # => ["breakfast-muffin-cups-to-go", ...]
+    def self.slugs
+      Dir["lib/nutrition/recipe/*.rb"].map { |f| f.split("/")
+                                                  .last
+                                                  .gsub(".rb", "")
+                                                  .gsub("_", "-") }
+    end
   end
 end
 
-Dir["./lib/nutrition/recipe/*.rb"].each { |file| require file }
+require_relative './recipe/breakfast_muffin_cups_to_go'
+require_relative './recipe/breakfast_quinoa'
+require_relative './recipe/homemade_muesli'
+require_relative './recipe/peaches_n_cream_parfait'
+require_relative './recipe/power_corn_pancakes_with_blueberries'
+require_relative './recipe/tomato_pesto_egg_white_omelet'
+require_relative './recipe/whole_wheat_crepes_florentine'
