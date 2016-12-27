@@ -22,4 +22,4 @@ class Nutrition
   end
 end
 
-Dir["./lib/nutrition/ingredients/*.rb"].each {|file| require file }
+Dir["./lib/nutrition/ingredient/*.rb"].each {|file| require file }

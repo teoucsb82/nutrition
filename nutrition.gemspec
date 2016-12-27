@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'nutrition'
-  s.version     = '1.0.0.pre'
+  s.version     = '1.0.3.pre'
   s.date        = '2016-12-26'
   s.summary     = "Nutrition gem for P90x"
   s.description = "TBD"

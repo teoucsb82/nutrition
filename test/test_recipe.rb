@@ -2,18 +2,25 @@ require 'minitest/autorun'
 require 'nutrition'
 
 class RecipeTest < Minitest::Test
+  describe '.find' do
+    it 'returns a fresh instance of the parameterized search results' do
+      slug = BreakfastMuffinCupsToGo.slug
+      assert_instance_of BreakfastMuffinCupsToGo, Nutrition::Recipe.find(slug)
+    end
+  end
+
   describe 'recipes' do
     it 'has the following recipes' do
-      assert_instance_of Nutrition::Recipe::BreakfastMuffinCupsToGo, Nutrition::Recipe::BreakfastMuffinCupsToGo.new
-      assert_instance_of Nutrition::Recipe::PeachesNCreamParfait, Nutrition::Recipe::PeachesNCreamParfait.new
-      assert_instance_of Nutrition::Recipe::TomatoPestoEggWhiteOmelet, Nutrition::Recipe::TomatoPestoEggWhiteOmelet.new
-      assert_instance_of Nutrition::Recipe::WholeWheatCrepesFlorentine, Nutrition::Recipe::WholeWheatCrepesFlorentine.new
+      assert_instance_of BreakfastMuffinCupsToGo, BreakfastMuffinCupsToGo.new
+      assert_instance_of PeachesNCreamParfait, PeachesNCreamParfait.new
+      assert_instance_of TomatoPestoEggWhiteOmelet, TomatoPestoEggWhiteOmelet.new
+      assert_instance_of WholeWheatCrepesFlorentine, WholeWheatCrepesFlorentine.new
     end
   end
 
   describe 'instance methods' do    
     before do
-      @recipe = Nutrition::Recipe::TomatoPestoEggWhiteOmelet.new
+      @recipe = TomatoPestoEggWhiteOmelet.new
     end
 
     describe '#to_s' do
