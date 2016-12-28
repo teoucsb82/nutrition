@@ -15,6 +15,7 @@ class RecipeTest < Minitest::Test
       assert_instance_of BreakfastQuinoa, BreakfastQuinoa.new
       assert_instance_of HomemadeMuesli, HomemadeMuesli.new
       assert_instance_of PeachesNCreamParfait, PeachesNCreamParfait.new
+      assert_instance_of PeanutButterProteinShake, PeanutButterProteinShake.new
       assert_instance_of PowerCornPancakesWithBlueberries, PowerCornPancakesWithBlueberries.new
       assert_instance_of TomatoPestoEggWhiteOmelet, TomatoPestoEggWhiteOmelet.new
       assert_instance_of WholeWheatCrepesFlorentine, WholeWheatCrepesFlorentine.new

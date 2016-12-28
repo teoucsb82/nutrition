@@ -7,5 +7,6 @@ class Nutrition
     FAT = 'Fat'
     DAIRY = 'Dairy'
     FRUIT = 'Fruit'
+    LEGUME = 'Legume'
   end
 end
